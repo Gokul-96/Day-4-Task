@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //print odd numbers in array  
+    //Anonymous function    
+    let arr = [1,5,2,4,7,9,12,23,41]
+    let fun= function  (arr){
+                      for(let i = 0 ; i< arr.length ; i++){
+                            if(arr[i]%2!=0){
+                               console.log(arr[i])
+                            }
+                       }
+                    }
+                    fun(arr)
+   o/p = 1
+   5
+   7
+   9
+   23
+   41
+   
+   
+   //IIFE function
+   (function(arr){
+                for(Let i = 0 ; i< arr.length ; i++){
+                           if(arr[i]%2!=0){
+                              console.log(arr[i])
+                           }
+                      }
+                })([101,24,31,142,45])
+   o/p = 101
+   31
+   45
+   
+   
+   //Arrow Function
+   var arr = [1,5,2,4,7,9,12,23,41]  
+   fun = (arr) => {
+       for(var i = 0 ; i< arr.length ; i++){
+                           if(arr[i]%2!=0){
+                              console.log(arr[i])
+                           }
+                      }
+                           }
+                
+   
+   
+   //Convert all the string to title caps in a string array
+   //Anonymous function
+   let str ="do it now"
+   let fun =function (str) {
+                       str = str.split(' ');
+                       for (var i = 0; i < str.length; i++) {
+                         str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+                       }
+                       return str.join(' ');
+                     }
+                    console.log(fun(str))
+                    O/p = Do It Now
+                    
+   
+   
+   //IIFE function
+   (function (str) {
+                       str = str.toLowerCase().split(' ');
+                       for (var i = 0; i < str.length; i++) {
+                         str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+                        
+                       }
+                       console.log(str.join(' '));
+                      
+                     })("do it now");
+                     O/p = Do It Now
+   
+   
+   //Arrow function
+   var str ="do it now"
+   a = (str) => {
+                       str = str.toLowerCase().split(' ');
+                       for (var i = 0; i < str.length; i++) {
+                         str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+                       }
+                       return str.join(' ');
+                     }  
+                     console.log(a)
+                    
+                  
+   
+   
+   //sum of all numbers in array
+   //Anonymous function                  
+   let num = [1,5,2,4,71,33]
+   let fun =function (num){
+                     var sum = 0;
+                     for(var i = 0 ; i< num.length ; i++){
+                        sum = sum + num[i];
+                      }
+                      return sum;
+                   }
+                   console.log(fun(num))
+                   o/p = 116
+   //IIFE function
+   let a =(function fun (num){
+                     var sum = 0;
+                     for(var i = 0 ; i< num.length ; i++){
+                        sum = sum + num[i];
+                      }
+                      return sum;
+                   })[2,22,43,213,543]
+                   console.log (a)
+   //Arrow function
+   sum = (array)=>{
+                var sum = 0;
+                     for(var i = 0 ; i< array.length ; i++){
+                        sum = sum + array[i];
+                      }
+                      return sum;
+                      }
+   
+   
+   
+   
+   
+   
+   //Remove duplicates from an Array
+   //Anonymous function
+   
+   
+   let arr = ["apple", "mango", "apple","orange", "mango", "mango"];
+   function duplicates(arr) {
+       return arr.filter((item,
+           index) => arr.indexOf(item) === index);
+   }console.log(duplicates(arr));
+   o/p :[ 'apple', 'mango', 'orange' ]
+   
+   
+   //IIFE:
+   let arr = ["apple", "mango", "apple","orange", "mango", "mango"];
+   let a= (function duplicates(arr) {
+       return arr.filter((item,
+           index) => arr.indexOf(item) === index);
+   })([ 'apple', 'mango', 'orange' ])
+   console.log(a);
+
+
+
+Return all the prime numbers in an array:
+//Anonymous Function:
+
+                let fun = function(numArray){
+                      numArray = numArray.filter((number) => {
+                        for (var i = 2; i <= Math.sqrt(number); i++) {
+                          if (number % i === 0) return false;
+                        }
+                        return true;
+                      });
+                      console.log(fun(numArray));
+                  }
+//IIFE:
+                   (  
+                   function(numArray){
+                      numArray = numArray.filter((number) => {
+                        for (var i = 2; i <= Math.sqrt(number); i++) {
+                          if (number % i === 0) return false;
+                        }
+                        return true;
+                      });
+                      console.log(numArray);
+                  })([1,2,3,4])
+   
+
+//Arrow Function :
+    
+       primeNumber = (numArray) => {
+                      numArray = numArray.filter((number) => {
+                        for (var i = 2; i <= Math.sqrt(number); i++) {
+                          if (number % i === 0) return false;
+                        }
+                        return true;
+                      });
+                      console.log(numArray);
+                  }
+
+
+Return all the palindromes in an array:
+
+function isPalindrome(N)
+    {
+        let str = "" + N;
+        let len = str.length;
+        for (let i = 0; i < parseInt(len / 2, 10); i++)
+        {
+            if (str[i] != str[len - 1 - i ])
+                return false;
+        }
+        return true;
+    }
+    
+  //Anonymous Function 
+  function (arr, n)
+    {
+        for (let i = 0; i < n; i++)
+        {
+            let ans = isPalindrome(arr[i]);
+            if (ans == false)
+                return false;
+        }
+        return true;
+    }
+    
+   //IIFE : 
+
+              (  function (arr, n)
+        {
+            // Traversing each element of the array
+            // and check if it is palindrome or not
+            for (let i = 0; i < n; i++)
+            {
+                let ans = isPalindrome(arr[i]);
+                if (ans == false)
+                    return false;
+            }
+            return true;
+        })([1,2,3] , 3)
+
+//Arrow : 
+Palindrome = (arr, n) =>
+    {
+        for (let i = 0; i < n; i++)
+        {
+            let ans = isPalindrome(arr[i]);
+            if (ans == false)
+                return false;
+        }
+        return true;
+
+
+    </script>
+</body>
+</html>
