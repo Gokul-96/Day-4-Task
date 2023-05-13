@@ -89,7 +89,7 @@
                        }
                        return str.join(' ');
                      }  
-                     console.log(a)
+                     console.log(a(str))
                     
                   
    
@@ -107,7 +107,7 @@
                    console.log(fun(num))
                    o/p = 116
    //IIFE function
-   let a =(function fun (num){
+   let a =(function (num){
                      var sum = 0;
                      for(var i = 0 ; i< num.length ; i++){
                         sum = sum + num[i];
@@ -116,13 +116,15 @@
                    })[2,22,43,213,543]
                    console.log (a)
    //Arrow function
-   sum = (array)=>{
+
+ sum = (num)=>{
                 var sum = 0;
-                     for(var i = 0 ; i< array.length ; i++){
-                        sum = sum + array[i];
+                     for(var i = 0 ; i< num.length ; i++){
+                        sum = sum + num[i];
                       }
                       return sum;
                       }
+                      console.log(sum(num))
    
    
    
@@ -138,22 +140,22 @@
        return arr.filter((item,
            index) => arr.indexOf(item) === index);
    }console.log(duplicates(arr));
-   o/p :[ 'apple', 'mango', 'orange' ]
+   o/p :[ 'apple', 'mango', 'orange']
    
    
    //IIFE:
-   let arr = ["apple", "mango", "apple","orange", "mango", "mango"];
+
    let a= (function duplicates(arr) {
        return arr.filter((item,
            index) => arr.indexOf(item) === index);
-   })([ 'apple', 'mango', 'orange' ])
+   })([ 'apple', 'mango', 'orange','orange' ])
    console.log(a);
 
 
 
 Return all the prime numbers in an array:
 //Anonymous Function:
-
+let numArray=[1,2,3,4]
                 let fun = function(numArray){
                       numArray = numArray.filter((number) => {
                         for (var i = 2; i <= Math.sqrt(number); i++) {
@@ -240,7 +242,7 @@ Palindrome = (arr, n) =>
                 return false;
         }
         return true;
-
+      }
 
     </script>
 </body>
